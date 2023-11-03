@@ -6,8 +6,10 @@ class FootterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(children: [
+    return Card(
+      shadowColor: Colors.red,
+      color: Colors.white54,
+      child: Column(children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -41,6 +43,8 @@ class FootterPage extends StatelessWidget {
           children: [
             SizedBox(
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
                     children: [
