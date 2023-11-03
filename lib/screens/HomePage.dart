@@ -2,10 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:property/screens/FootterPage.dart';
 
 import '../Colors.dart';
 import '../constant/Constants.dart';
 import '../controllers/homePageController.dart';
+import 'MapSample.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
@@ -117,7 +119,6 @@ class HomePage extends StatelessWidget {
                                     width: double.infinity,
                                     fit: BoxFit.cover,
                                   ),
-                                  // Add a container with padding that contains the card's title, text, and buttons
                                   Container(
                                     padding: const EdgeInsets.fromLTRB(
                                         15, 15, 15, 0),
@@ -125,14 +126,43 @@ class HomePage extends StatelessWidget {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: <Widget>[
-                                        // Display the card's title using a font size of 24 and a dark grey color
-                                        Text(
-                                          "Cards Title 2",
-                                          style: TextStyle(
-                                            fontSize: 20,
-                                            color: Colors.grey[800],
-                                          ),
+                                        Row(
+                                          children: [
+                                            Image.asset("images/bed.png",height: 10,width: 20,),
+                                            Text(
+                                              "Bed :2",
+                                              style: TextStyle(
+                                                fontSize: 10,
+                                                color: Colors.grey[700],
+                                              ),
+                                            ),
+                                            Image.asset("images/room.png",height: 10,width: 20,),
+                                            Text(
+                                              "Room :2",
+                                              style: TextStyle(
+                                                fontSize: 10,
+                                                color: Colors.grey[700],
+                                              ),
+                                            ),
+                                            Image.asset("images/bath.png",height: 10,width: 20,),
+                                            Text(
+                                              "Bath :1",
+                                              style: TextStyle(
+                                                fontSize: 10,
+                                                color: Colors.grey[700],
+                                              ),
+                                            ),
+                                            Image.asset("images/area.png",height: 10,width: 20),
+                                            Text(
+                                              "2000 sqft",
+                                              style: TextStyle(
+                                                fontSize: 10,
+                                                color: Colors.grey[700],
+                                              ),
+                                            ),
+                                          ],
                                         ),
+                                        SizedBox(height: 10,),
                                         Text(
                                           homeController.listName[0],
                                           style: TextStyle(
@@ -144,28 +174,14 @@ class HomePage extends StatelessWidget {
                                           children: <Widget>[
                                             // Add a spacer to push the buttons to the right side of the card
                                             const Spacer(),
-                                            // Add a text button labeled "SHARE" with transparent foreground color and an accent color for the text
+
                                             TextButton(
                                               style: TextButton.styleFrom(
                                                 backgroundColor:
                                                     Colors.transparent,
                                               ),
                                               child: const Text(
-                                                "SHARE",
-                                                style: TextStyle(
-                                                    color:
-                                                        MyColorsSample.accent),
-                                              ),
-                                              onPressed: () {},
-                                            ),
-                                            // Add a text button labeled "EXPLORE" with transparent foreground color and an accent color for the text
-                                            TextButton(
-                                              style: TextButton.styleFrom(
-                                                backgroundColor:
-                                                    Colors.transparent,
-                                              ),
-                                              child: const Text(
-                                                "EXPLORE",
+                                                "Detail",
                                                 style: TextStyle(
                                                     color:
                                                         MyColorsSample.accent),
@@ -177,7 +193,6 @@ class HomePage extends StatelessWidget {
                                       ],
                                     ),
                                   ),
-                                  // Add a small space between the card and the next widget
                                   Container(height: 5),
                                 ],
                               ),
@@ -188,6 +203,13 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
               ),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                  color: Colors.white
+                ),
+                child:  FootterPage(),
+              )
             ],
           ),
         ),
