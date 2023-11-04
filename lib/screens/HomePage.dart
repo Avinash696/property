@@ -8,6 +8,7 @@ import 'package:property/screens/FootterPage.dart';
 import '../Colors.dart';
 import '../constant/Constants.dart';
 import '../controllers/homePageController.dart';
+import 'AgentPage.dart';
 import 'MapSample.dart';
 
 class HomePage extends StatelessWidget {
@@ -37,11 +38,13 @@ class HomePage extends StatelessWidget {
                                 Get.offAll(HomePage());
                               }, child: Text("HOME")),
                               SizedBox(width: 50),
-                              InkWell(onTap: () {}, child: Text("AGENTS")),
+                              InkWell(onTap: () {
+                                Get.to(AgentPage());
+                              }, child: Text("AGENTS")),
                               SizedBox(width: 50),
                               InkWell(
                                   onTap: () {
-                                    Get.offAll(AboutUsPage());
+                                    Get.to(AboutUsPage());
                                   }, child: Text("About Us")),
                               SizedBox(width: 50),
                             ],
@@ -133,6 +136,26 @@ class HomePage extends StatelessWidget {
                             fontSize: 15)),
                     Text(
                         "Cash, UPI, BHIM, Visa Card, Master Card, RuPay Card",
+                        style: TextStyle(
+                            fontFamily: "assets/fonts/branda.ttf",
+                            color: Colors.orangeAccent,
+                            fontSize: 15)),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 150,right: 150 ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                        "Timings",
+                        style: TextStyle(
+                            fontFamily: "assets/fonts/branda.ttf",
+                            color: Colors.orangeAccent,
+                            fontSize: 15)),
+                    Text(
+                        "Mon - Sun 9:00 am - 9:00 pm",
                         style: TextStyle(
                             fontFamily: "assets/fonts/branda.ttf",
                             color: Colors.orangeAccent,

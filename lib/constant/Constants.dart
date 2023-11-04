@@ -6,6 +6,7 @@ class Constants {
   static const contactPage = "/contactPage";
   static const footerPage = "/footer";
   static const aboutUsPage = "/aboutUs";
+  static const agentPage = "/agent";
 
   //
   static const descriptionProperty =
