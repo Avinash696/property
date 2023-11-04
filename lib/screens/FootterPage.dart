@@ -8,7 +8,8 @@ class FootterPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       shadowColor: Colors.red,
-      color: Colors.white54,
+      color: Colors.white,
+      elevation: 9,
       child: Column(children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,

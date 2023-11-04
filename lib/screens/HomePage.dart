@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:property/screens/AboutUsPage.dart';
 import 'package:property/screens/FootterPage.dart';
 
 import '../Colors.dart';
@@ -32,12 +33,16 @@ class HomePage extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
-                              InkWell(onTap: () {}, child: Text("HOME")),
+                              InkWell(onTap: () {
+                                Get.offAll(HomePage());
+                              }, child: Text("HOME")),
                               SizedBox(width: 50),
                               InkWell(onTap: () {}, child: Text("AGENTS")),
                               SizedBox(width: 50),
                               InkWell(
-                                  onTap: () {}, child: Text("CAREER WITH US")),
+                                  onTap: () {
+                                    Get.offAll(AboutUsPage());
+                                  }, child: Text("About Us")),
                               SizedBox(width: 50),
                             ],
                           ))
@@ -46,11 +51,27 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               Divider(),
-              Text("FARM HOUSE IN LUCKNOW",
-                  style: TextStyle(
-                      fontFamily: "assets/fonts/branda.ttf",
-                      color: Colors.red,
-                      fontSize: 20)),
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Colors.grey
+                  )
+                ),
+                child: RichText(text: TextSpan(children: <TextSpan>[
+                  TextSpan(text: "Jankipuram Extension, Lucknow",style: TextStyle(color: Colors.black54)),
+                  TextSpan(text :" Opens at 09:00 AM ",
+                      style: TextStyle(
+                          fontFamily: "assets/fonts/branda.ttf",
+                          color: Colors.green,
+                          fontSize: 17)),
+                  TextSpan(text :"22 Years in Business",
+                      style: TextStyle(
+                          fontFamily: "assets/fonts/branda.ttf",
+                          color: Colors.orange,
+                          fontSize: 21)),
+                ])),
+              ),
+
               Padding(
                 padding: const EdgeInsets.all(18.0),
                 child: Text(Constants.descriptionProperty,
@@ -68,6 +89,58 @@ class HomePage extends StatelessWidget {
                         color: Colors.black,
                         fontSize: 15)),
               ),
+              Divider(),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                    "Quick Information",
+                    style: TextStyle(
+                        fontFamily: "assets/fonts/branda.ttf",
+                        color: Colors.black,
+                        fontSize: 20,
+                    decoration: TextDecoration.underline)),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 150,right: 150),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                        "Year of Establishment",
+                        style: TextStyle(
+                            fontFamily: "assets/fonts/branda.ttf",
+                            color: Colors.orangeAccent,
+                            fontSize: 15)),
+                    Text(
+                        "2014",
+                        style: TextStyle(
+                            fontFamily: "assets/fonts/branda.ttf",
+                            color: Colors.orangeAccent,
+                            fontSize: 15)),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 150,right: 150 ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                        "Mode of Payment",
+                        style: TextStyle(
+                            fontFamily: "assets/fonts/branda.ttf",
+                            color: Colors.orangeAccent,
+                            fontSize: 15)),
+                    Text(
+                        "Cash, UPI, BHIM, Visa Card, Master Card, RuPay Card",
+                        style: TextStyle(
+                            fontFamily: "assets/fonts/branda.ttf",
+                            color: Colors.orangeAccent,
+                            fontSize: 15)),
+                  ],
+                ),
+              ),
+              Divider(),
               Container(
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(color: Colors.black12),
@@ -206,9 +279,9 @@ class HomePage extends StatelessWidget {
               Container(
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
-                  color: Colors.white
+
                 ),
-                child:  FootterPage(),
+                child:  const FootterPage(),
               )
             ],
           ),

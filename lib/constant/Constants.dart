@@ -1,10 +1,11 @@
 class Constants {
 
   static const splash = "/";
-  static const footerPage = "/footer";
   static const home = "/home";
   static const detail = "/detail";
   static const contactPage = "/contactPage";
+  static const footerPage = "/footer";
+  static const aboutUsPage = "/aboutUs";
 
   //
   static const descriptionProperty =
